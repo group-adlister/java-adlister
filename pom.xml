@@ -29,6 +29,23 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>3.0.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
     </dependencies>
+
+    <!--<servlet>-->
+        <!--<servlet-name>PageHitCounter</servlet-name>-->
+        <!--<servlet-class>PageHitCounter</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>PageHitCounter</servlet-name>-->
+        <!--<url-pattern>/PageHitCounter</url-pattern>-->
+    <!--</servlet-mapping>-->
 
 </project>
