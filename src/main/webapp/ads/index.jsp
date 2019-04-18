@@ -12,7 +12,7 @@
             <th>UserID</th>
             <th>Description</th>
         </thead>
-        <c:forEach var="ad" items="${ads}" >
+        <c:forEach var="ad" items="${asdf}" >
             <tr>
                 <td>${ad.title}</td>
                 <td>${ad.userId}</td>

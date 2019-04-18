@@ -9,14 +9,14 @@ import java.util.List;
 
 @WebServlet( urlPatterns = "/ads")
 
-public class AdServlet  extends HttpServlet {
+public class AdServlet extends HttpServlet {
 
     Ads dao = DaoFactory.getAdsDao();
 
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
         List<Ad> ads = dao.all();
-        req.setAttribute("ads",ads);
+        req.setAttribute("asdf",ads);
         req.getRequestDispatcher("/ads/index.jsp").forward(req, res);
     }
 
