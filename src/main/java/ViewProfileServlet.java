@@ -12,7 +12,7 @@ public class ViewProfileServlet extends HttpServlet {
         if (request.getSession().getAttribute("user") != null) {
             request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
         }
-        else {
+        else { // could remove else and put return on if statement
             response.sendRedirect("/login");
         }
 

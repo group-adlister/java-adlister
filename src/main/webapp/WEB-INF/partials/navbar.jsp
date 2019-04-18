@@ -9,14 +9,21 @@
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-            <c:choose>
-                <c:when test="${user != null}" >
-                        <li><a href="/logout">Logout</a></li>
-                </c:when>
-                <c:when test="${user == null}" >
-                    <li><a href="/login">Login</a></li>
-                </c:when>
-            </c:choose>
+            <%--<c:choose>--%>
+                <%--<c:when test="${user != null}" >--%>
+                        <%--<li><a href="/logout">Logout</a></li>--%>
+                <%--</c:when>--%>
+                <%--<c:when test="${user == null}" >--%>
+                    <%--<li><a href="/login">Login</a></li>--%>
+                <%--</c:when>--%>
+            <%--</c:choose>--%>
+
+            <c:if test="${user != null}" >
+                <li><a href="/logout">Logout</a></li>
+            </c:if>
+            <c:if test="${user == null}" >
+                <li><a href="/login">Login</a></li>
+            </c:if>
 
         </ul>
     </div><!-- /.navbar-collapse -->
