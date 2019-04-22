@@ -1,5 +1,5 @@
-import java.util.List;
-
-public interface Albums {
-    List<Album> all;
-}
+//import java.util.List;
+//
+//public interface Albums {
+//    List<Album> all;
+//}
