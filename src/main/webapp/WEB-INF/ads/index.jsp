@@ -19,6 +19,7 @@
         </div>
     </c:forEach>
 </div>
+<jsp:include page="/WEB-INF/partials/includes.jsp" />
 
 </body>
 </html>

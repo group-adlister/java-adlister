@@ -11,6 +11,7 @@
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
+    <jsp:include page="/WEB-INF/partials/includes.jsp" />
 
 </body>
 </html>

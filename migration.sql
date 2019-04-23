@@ -14,9 +14,19 @@ CREATE TABLE users (
 CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
+    category_id INT UNSIGNED NOT NULL,
     title VARCHAR(240) NOT NULL,
     description TEXT NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (category_id) REFERENCES categories(id)
         ON DELETE CASCADE
 );
+
+create table categories (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    species varchar(255) not null,
+    size varchar(255) not null,
+    number_of_legs int not null,
+    is_alive boolean not null
+)
