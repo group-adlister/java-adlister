@@ -9,8 +9,17 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
+<form action="/ads" method="get">
+    <div class="form-group">
+        <label for="search">search</label>
+        <input id="search" name="search" class="form-control" type="text">
+    </div>
+    <input type="submit" class="btn btn-primary btn-block">
+</form>
+
 <div class="container">
     <h1>Here Are all the ads!</h1>
+    <h1> <%= request.getParameter("search")%></h1>
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
@@ -23,3 +32,4 @@
 
 </body>
 </html>
+

@@ -6,23 +6,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListAdsDao implements Ads {
+
     private List<Ad> ads;
+    private List<Ad> ads_by_ID;
     private String no_ads;
 
     public List<Ad> all() {
-        if (ads == null) {
-            no_ads = generateAds();
-        }
+        return ads;
+    }
+
+    public List<Ad> search_add() {
         return ads;
     }
 
     public Long insert(Ad ad) {
-        // make sure we have ads
-        if (ads == null) {
-            no_ads = generateAds();
-        }
-        // we'll assign an "id" here based on the size of the ads list
-        // really the dao would handle this
         ad.setId((long) ads.size());
         ads.add(ad);
         return ad.getId();
