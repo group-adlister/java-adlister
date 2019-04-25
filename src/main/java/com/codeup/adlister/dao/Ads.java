@@ -14,5 +14,8 @@ public interface Ads {
     List<Ad> listUsersAds(Long userID);
     //Search
     List<Ad> searchForAds(String search);
+    //Click on an ad
+    List<Ad> clickOnAd(long thisID);
+
 }
 

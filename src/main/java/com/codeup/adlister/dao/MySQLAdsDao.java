@@ -101,4 +101,18 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error finding a user by username", e);
         }
     }
+
+//    CLICK ON A SPECIFIC AD
+    @Override
+    public List<Ad> clickOnAd(long thisID) {
+        try {
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = ?");
+            stmt.setLong(1, thisID);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        }
+        catch (SQLException e) {
+            throw new RuntimeException("Error finding this ad", e);
+        }
+    }
 }
