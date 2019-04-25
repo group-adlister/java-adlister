@@ -19,6 +19,10 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
+    public List<Ad> adds_by_user_id(int id) {
+        return ads;
+    }
+
     public Long insert(Ad ad) {
         ad.setId((long) ads.size());
         ads.add(ad);
@@ -28,4 +32,5 @@ public class ListAdsDao implements Ads {
     private String generateAds() {
         return "There is nothing for sale in your area";
     }
+
 }

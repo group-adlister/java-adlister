@@ -9,6 +9,8 @@ public interface Ads {
     List<Ad> all();
 
     List<Ad> search_add(String search);
+
+    List<Ad> adds_by_user_id(int id);
     
     Long insert(Ad ad);
 

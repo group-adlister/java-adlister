@@ -50,6 +50,19 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    public List<Ad> adds_by_user_id(int id) {
+        try {
+            String insertQuery = "SELECT * FROM ads WHERE user_id LIKE ?";
+            String searchTermWithWild = "%" + id + "%";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, searchTermWithWild);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
     /* --This puts an add into the data base----------------------------------------------------------------------------------------- */
     @Override
     public Long insert(Ad ad) {

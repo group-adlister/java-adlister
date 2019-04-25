@@ -12,7 +12,6 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Sign up</a></li>
-                    <li><a href="/ads">Search Ads</a></li>
                 </ul>
             </c:if>
 
@@ -21,6 +20,7 @@
                     <li><a href="/logout">Logout</a></li>
                     <li><a href="/ads">Search</a></li>
                     <li><a href="/ads/create">Post</a></li>
+                    <li><a href="/userAds">Your ads</a></li>
                     <li><a href="/ads">${sessionScope.user.username}</a></li>
                 </ul>
             </c:if>
