@@ -7,7 +7,19 @@
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
+    <% String user = request.getParameter("user");
+        if (user != null) {
+    %>
+    <jsp:include page="/WEB-INF/partials/navbar_logged_out.jsp" />
+    <%
+    }
+    else if (user == null) {
+    %>
+    <jsp:include page="/WEB-INF/partials/navbar_logged_in.jsp" />
+    <%
+        }
+    %>
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
