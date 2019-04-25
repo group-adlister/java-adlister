@@ -36,18 +36,19 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public List<Ad> search_add() {
-        PreparedStatement stmt = null;
-        String search = null;
+    @Override
+        public List<Ad> search_add(String search) {
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE '%apple%'");
+            String insertQuery = "SELECT * FROM ads WHERE title LIKE ?";
+            String searchTermWithWild = "%" + search + "%";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, searchTermWithWild);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
-
 
     /* --This puts an add into the data base----------------------------------------------------------------------------------------- */
     @Override

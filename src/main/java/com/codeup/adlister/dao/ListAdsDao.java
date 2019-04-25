@@ -15,7 +15,7 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
-    public List<Ad> search_add() {
+    public List<Ad> search_add(String search) {
         return ads;
     }
 
