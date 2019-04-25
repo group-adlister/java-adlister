@@ -9,6 +9,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
+<div class="container">
 <form action="/ads" method="get">
     <div class="form-group">
         <label for="search">search</label>
@@ -16,6 +17,7 @@
     </div>
     <input type="submit" class="btn btn-primary btn-block">
 </form>
+</div>
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
