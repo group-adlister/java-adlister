@@ -2,6 +2,7 @@ USE adlister_db;
 
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS categories;
 
 CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -9,6 +10,15 @@ CREATE TABLE users (
     email VARCHAR(240) NOT NULL,
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
+);
+
+create table categories (
+                            id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    #     species varchar(255) not null,
+                            size varchar(255) not null,
+    #     number_of_legs int not null,
+    #     is_alive boolean not null,
+                            PRIMARY KEY (id)
 );
 
 CREATE TABLE ads (
@@ -20,13 +30,7 @@ CREATE TABLE ads (
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (category_id) REFERENCES categories(id)
-        ON DELETE CASCADE
+#         ON DELETE CASCADE
 );
 
-create table categories (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    species varchar(255) not null,
-    size varchar(255) not null,
-    number_of_legs int not null,
-    is_alive boolean not null
-)
+

@@ -15,8 +15,29 @@
                 <input id="title" name="title" class="form-control" type="text">
             </div>
             <div class="form-group">
+
                 <label for="description">Description</label>
-                <textarea id="description" name="description" class="form-control" type="text"></textarea>
+                <textarea id="description" name="description" class="form-control"></textarea>
+
+                <%--<h5><strong>Gender</strong></h5>--%>
+                <%--<label for="male"></label>--%>
+                <%--<input type="radio" name="gender" value="male" id="male" checked> Male<br>--%>
+
+                <%--<label for="female"></label>--%>
+                <%--<input type="radio" name="gender" value="female" id="female"> Female<br>--%>
+
+                <%--<label for="other"></label>--%>
+                <%--<input type="radio" name="gender" value="other" id="other"> Other<br>--%>
+
+                <label for="size">Size</label>
+                <select name="size" id="size">
+                    <option value="small"> Small</option>
+                    <option value="medium"> Medium</option>
+                    <option value="large"> Large</option>
+                </select>
+
+
+
             </div>
             <input type="submit" class="btn btn-block btn-primary">
         </form>

@@ -8,11 +8,12 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/ads/create">Create Ad</a></li>
-            <li><a href="/register">Register</a></li>
-            <c:if test="${!user}">
+
+            <c:if test="${user == null}">
+                <li><a href="/register">Register</a></li>
                 <li><a href="/login">Login</a></li>
             </c:if>
-            <c:if test="${user}">
+            <c:if test="${user != null}">
                 <li><a href="/logout">Logout</a></li>
             </c:if>
         </ul>
