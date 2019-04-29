@@ -30,6 +30,12 @@ else if (user == null) {
             <p>${ad.description}</p>
         </div>
     </c:forEach>
+    <%--<c:forEach var="user" items="${users}">--%>
+        <%--<div class="col-md-6">--%>
+            <%--<h2>${users.username}</h2>--%>
+            <%--<p>${users.email}</p>--%>
+        <%--</div>--%>
+    <%--</c:forEach>--%>
 </div>
 </body>
 </html>
