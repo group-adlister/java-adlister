@@ -28,11 +28,14 @@ public class userAdsServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
         String deleteID = request.getParameter("delete");
-        System.out.println(deleteID);
-        DaoFactory.getAdsDao().delete(Integer.parseInt(deleteID));
-        response.sendRedirect("/userAds");
+        String editID = request.getParameter("edit");
+
+        if (deleteID != null) {
+            System.out.println(deleteID);
+            DaoFactory.getAdsDao().delete(Integer.parseInt(deleteID));
+            response.sendRedirect("/userAds");
+        }
 
     }
 
