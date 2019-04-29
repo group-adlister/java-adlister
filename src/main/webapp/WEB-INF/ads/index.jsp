@@ -17,6 +17,7 @@
             <h2><a href="ads/details">${ad.title}</a></h2>
             <p>${ad.description}</p>
             <%--<p>${"searchResults"}</p>--%>
+            <%--<p>${ad.category_id}</p>--%>
             <p>asdf ${searchResults} asdf</p>
 
         </div>

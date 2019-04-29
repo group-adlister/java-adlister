@@ -17,6 +17,7 @@
             <div class="col-md-6">
                 <h2>${ad.id}</h2>
                 <h2>${ad.description}</h2>
+                <h2>${ad.categoryId}</h2>
             </div>
     </c:forEach>
 

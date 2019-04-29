@@ -33,4 +33,17 @@ CREATE TABLE ads (
 #         ON DELETE CASCADE
 );
 
+insert into users(id, username, email, password)
+    value(
+      1, 'admin', 'admin@admin.com', 'password'
+    );
 
+insert into categories(id, size)
+    VALUES(
+          1, 'small'
+      );
+
+INSERT INTO ads(user_id, category_id, title, description)
+    VALUES(
+               1, 1, 'ad1', 'ad1 description...'
+    );

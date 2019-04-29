@@ -8,41 +8,62 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
-        <h1>Create a new Ad</h1>
-        <form action="/ads/create" method="post">
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input id="title" name="title" class="form-control" type="text">
-            </div>
-            <div class="form-group">
+        <div class="row">
 
-                <label for="description">Description</label>
-                <textarea id="description" name="description" class="form-control"></textarea>
+            <h1>Create a new Ad</h1>
+            <form action="/ads/create" method="post">
 
-                <%--<h5><strong>Gender</strong></h5>--%>
-                <%--<label for="male"></label>--%>
-                <%--<input type="radio" name="gender" value="male" id="male" checked> Male<br>--%>
+                <div class="input-field col s12">
+                    <select id="size">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <label>Materialize Select</label>
+                </div>
+                <%--<div class="input-field col s12">--%>
+                    <%--<label for="title">Title--%>
+                        <%--<input id="title" name="title" class="form-control" type="text">--%>
+                    <%--</label>--%>
+                <%--</div>--%>
 
-                <%--<label for="female"></label>--%>
-                <%--<input type="radio" name="gender" value="female" id="female"> Female<br>--%>
+                <%--<div class="input-field col s12">--%>
+                    <%--<label for="description">Description--%>
+                        <%--<textarea id="description" name="description" class="form-control"></textarea>--%>
+                    <%--</label>--%>
+                <%--</div>--%>
 
-                <%--<label for="other"></label>--%>
-                <%--<input type="radio" name="gender" value="other" id="other"> Other<br>--%>
+            <%--<h5><strong>Gender</strong></h5>--%>
+                    <%--<label for="male"></label>--%>
+                    <%--<input type="radio" name="gender" value="male" id="male" checked> Male<br>--%>
 
-                <label for="size">Size</label>
-                <select name="size" id="size">
-                    <option value="small"> Small</option>
-                    <option value="medium"> Medium</option>
-                    <option value="large"> Large</option>
-                </select>
+                    <%--<label for="female"></label>--%>
+                    <%--<input type="radio" name="gender" value="female" id="female"> Female<br>--%>
+
+                    <%--<label for="other"></label>--%>
+                    <%--<input type="radio" name="gender" value="other" id="other"> Other<br>--%>
+
+                <%--<div class="input-field col s12">--%>
+                    <%--<label for="size">Size--%>
+                        <%--<select name="size" id="size">--%>
+                            <%--<option value="" disabled selected>Choose your option</option>--%>
+                            <%--<option value="small"> Small</option>--%>
+                            <%--<option value="medium"> Medium</option>--%>
+                            <%--<option value="large"> Large</option>--%>
+                        <%--</select>--%>
+                    <%--</label>--%>
+                    <%--<br>--%>
+                    <%--<input type="submit" class="btn btn-block btn-primary">--%>
+                <%--</div>--%>
 
 
-
-            </div>
-            <input type="submit" class="btn btn-block btn-primary">
-        </form>
+                <%--</div>--%>
+            </form>
+        </div>
     </div>
-    <jsp:include page="/WEB-INF/partials/includes.jsp" />
+
+<jsp:include page="/WEB-INF/partials/includes.jsp" />
 
 </body>
 </html>
