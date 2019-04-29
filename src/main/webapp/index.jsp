@@ -7,9 +7,11 @@
     </jsp:include>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <h1>Welcome to the Adlister!</h1>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+        <div class="container">
+            <h1>Welcome to Exotic Animal Lister</h1>
+            <%--<img src="${pageContext.request.contextPath}/WEB-INF/img/kwanzaa.png" />--%>
+        </div>
     </div>
 </body>
 </html>

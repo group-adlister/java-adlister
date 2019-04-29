@@ -3,20 +3,15 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Your Profile" />
+        <jsp:param name="title" value="Viewing All The Ads" />
     </jsp:include>
 </head>
 <body>
 
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-
-    <div class="container">
-        <h1>Welcome, ${sessionScope.user.username}!</h1>
-        <h3>These are your posted ads:</h3>
-    </div>
-    <jsp:include page="/WEB-INF/partials/includes.jsp" />
-
+<div class="container">
+    <h1>${sessionScope.ad.title}</h1>
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
@@ -24,7 +19,6 @@
             <p>${ad.description}</p>
         </div>
     </c:forEach>
-
-
+</div>
 </body>
 </html>
