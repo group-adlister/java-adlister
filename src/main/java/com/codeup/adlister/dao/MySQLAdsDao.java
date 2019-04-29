@@ -24,6 +24,10 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    public MySQLAdsDao() {
+
+    }
+
     @Override
     public List<Ad> all() {
         PreparedStatement stmt = null;
@@ -82,6 +86,29 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
+    /* -Delete------------------------------------------------------------------------------------------ */
+    /* ------------------------------------------------------------------------------------------- */
+    /* ------------------------------------------------------------------------------------------- */
+    /* ------------------------------------------------------------------------------------------- */
+    public Long delete(int delete_id) {
+        try {
+            String insertQuery = "DELETE FROM ads WHERE id LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            System.out.println("apple");
+            stmt.setInt(1, delete_id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+        return null;
+    }
+
+    /* ------------------------------------------------------------------------------------------------ */
+    /* ------------------------------------------------------------------------------------------- */
+    /* ------------------------------------------------------------------------------------------- */
+    /* ------------------------------------------------------------------------------------------- */
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
@@ -108,6 +135,16 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+    public static void main(String[] args) {
+
+//        Config config = new Config();
+//        MySQLAdsDao test = new MySQLAdsDao(config);
+//        Ad testad = new Ad(3, "test", "no description", 78131);
+//        test.insert(testad);
+//        test.delete(3);
+
     }
 
 }

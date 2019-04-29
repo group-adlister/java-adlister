@@ -29,6 +29,12 @@ public class ListAdsDao implements Ads {
         return ad.getId();
     }
 
+    @Override
+    public Long delete(int delete_id) {
+        return null;
+    }
+
+
     private String generateAds() {
         return "There is nothing for sale in your area";
     }

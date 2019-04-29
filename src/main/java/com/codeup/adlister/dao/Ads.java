@@ -14,5 +14,7 @@ public interface Ads {
     
     Long insert(Ad ad);
 
+    Long delete(int delete_id);
+
 }
 
