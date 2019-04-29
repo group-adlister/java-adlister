@@ -22,13 +22,18 @@
     %>
 
 <div class="container">
+    <form method="get">
+        <label for="search">Search</label>
+        <input type="text" name="search" id="search"><br>
+    </form>
+
+
     <h1>Here Are all the ads!</h1>
 
     <c:forEach var="ad" items="${ads}">
         <c:if test=""></c:if>
         <div class="col-md-6">
-            <h2><a href="/this_ad?id=${ad.id}">${ad.title}</a></h2>
-            <p>${ad.description}</p>
+            <h2><a href="/this_ad?id=${ad.id}&seller=${ad.userId}">${ad.title}</a></h2>
         </div>
     </c:forEach>
 </div>

@@ -19,14 +19,18 @@ public class ThisAdIndexServlet extends HttpServlet {
         String idAsString = request.getParameter("id");
         long adID = Long.parseLong(idAsString);
         request.setAttribute("ads", DaoFactory.getAdsDao().clickOnAd(adID));
+
 //
 //
 //        //get seller info
+
+
+
 //        String sellerAsString = request.getParameter("seller");
 //        long sellerID = Long.parseLong((sellerAsString));
 //
 //        System.out.println(sellerID);
-
+//
 //        DaoFactory.getUsersDao().findByUsername("jeremy");
 
 

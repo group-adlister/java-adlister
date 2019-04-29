@@ -3,10 +3,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="nav navbar-nav navbar-left">
             <div class="mt-2 d-inline">
-                <form method="get">
-                    <label for="search">Search</label>
-                    <input type="text" name="search" id="search"><br>
-                </form>
+
             </div>
             <div class="d-inline pl-4">
                 <a href="/ads">Browse</a>
