@@ -33,12 +33,4 @@ public class AdsIndexServlet extends HttpServlet {
         }
 
     }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-
-
-
-    }
-
 }

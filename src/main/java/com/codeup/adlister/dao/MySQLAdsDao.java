@@ -102,10 +102,23 @@ public class MySQLAdsDao implements Ads {
         return null;
     }
 
-    /* ------------------------------------------------------------------------------------------------ */
+    /* --EDIT---------------------------------------------------------------------------------------------- */
     /* ------------------------------------------------------------------------------------------- */
     /* ------------------------------------------------------------------------------------------- */
     /* ------------------------------------------------------------------------------------------- */
+
+//    public Long editAd(int edit_id) {
+//        try {
+//            String insertQuery = "DELETE FROM ads WHERE id = ?";
+//            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+//            stmt.setInt(1, delete_id);
+//            stmt.executeUpdate();
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error retrieving all ads.", e);
+//        }
+//        return null;
+//    }
+
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
