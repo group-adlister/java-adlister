@@ -20,26 +20,21 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<br>
-<br>
-<br>
 <div class="container">
-
-
-    <h1>These are your current listed ads:</h1>
+    <h1>${sessionScope.ad.title}</h1>
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <h2><a href="/this_ad?id=${ad.id}&seller=${ad.userId}">${ad.title}</a></h2>
-            <!––delete button---------------------------------------------------------------------------------––>
-            <div class="col-sm">
-                <form action="/userAds" method="post">
-                    <button type="submit" name="delete" value="${ad.id}">Delete</button>
-                </form>
-            </div>
-            <!––---------------------------------------------------------------------------------––>
+            <h2>${ad.title}</h2>
+            <p>${ad.description}</p>
         </div>
     </c:forEach>
+    <%--<c:forEach var="user" items="${users}">--%>
+    <%--<div class="col-md-6">--%>
+    <%--<h2>${users.username}</h2>--%>
+    <%--<p>${users.email}</p>--%>
+    <%--</div>--%>
+    <%--</c:forEach>--%>
 </div>
 
 

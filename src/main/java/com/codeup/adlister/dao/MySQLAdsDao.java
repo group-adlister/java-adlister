@@ -50,16 +50,15 @@ public class MySQLAdsDao implements Ads {
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving all ads.", e);
+            throw new RuntimeException("Error searching for this ad.", e);
         }
     }
 
     public List<Ad> adds_by_user_id(int id) {
         try {
-            String insertQuery = "SELECT * FROM ads WHERE user_id LIKE ?";
-            String searchTermWithWild = "%" + id + "%";
+            String insertQuery = "SELECT * FROM ads WHERE user_id = ?";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, searchTermWithWild);
+            stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -93,9 +92,8 @@ public class MySQLAdsDao implements Ads {
     /* ------------------------------------------------------------------------------------------- */
     public Long delete(int delete_id) {
         try {
-            String insertQuery = "DELETE FROM ads WHERE id LIKE ?";
+            String insertQuery = "DELETE FROM ads WHERE id = ?";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-            System.out.println("apple");
             stmt.setInt(1, delete_id);
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -137,14 +135,18 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
-    public static void main(String[] args) {
-
-//        Config config = new Config();
-//        MySQLAdsDao test = new MySQLAdsDao(config);
-//        Ad testad = new Ad(3, "test", "no description", 78131);
-//        test.insert(testad);
-//        test.delete(3);
-
+    //    CLICK ON A SPECIFIC AD
+    @Override
+    public List<Ad> clickOnAd(long thisID) {
+        try {
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = ?");
+            stmt.setLong(1, thisID);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        }
+        catch (SQLException e) {
+            throw new RuntimeException("Error finding this ad", e);
+        }
     }
 
 }

@@ -22,9 +22,6 @@ public class userAdsServlet extends HttpServlet {
         request.setAttribute("ads", DaoFactory.getAdsDao().adds_by_user_id(id));
         request.getRequestDispatcher("/WEB-INF/ads/userAds.jsp").forward(request, response);
 
-        request.getRequestDispatcher("/WEB-INF/ads/userAds.jsp")
-                .forward(request, response);
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {

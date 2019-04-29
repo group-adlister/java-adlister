@@ -16,5 +16,8 @@ public interface Ads {
 
     Long delete(int delete_id);
 
+    List<Ad> clickOnAd(long thisID);
+
+
 }
 

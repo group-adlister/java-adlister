@@ -35,6 +35,7 @@
 </div>
 
 <div class="container">
+    <h1>Browse All Ads</h1>
     <div class="row">
     <c:forEach var="ad" items="${ads}">
                 <div class="col-sm">
