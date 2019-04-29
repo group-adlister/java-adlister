@@ -87,10 +87,6 @@ public class MySQLAdsDao implements Ads {
     }
 
 
-    /* -Delete------------------------------------------------------------------------------------------ */
-    /* ------------------------------------------------------------------------------------------- */
-    /* ------------------------------------------------------------------------------------------- */
-    /* ------------------------------------------------------------------------------------------- */
     public Long delete(int delete_id) {
         try {
             String insertQuery = "DELETE FROM ads WHERE id LIKE ?";
@@ -102,6 +98,24 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
         return null;
+    }
+
+    /* -edit add------------------------------------------------------------------------------------------ */
+    /* ------------------------------------------------------------------------------------------- */
+    /* ------------------------------------------------------------------------------------------- */
+    /* ------------------------------------------------------------------------------------------- */
+
+    public List<Ad> adds_by_add_id(int id) {
+        try {
+            String insertQuery = "SELECT * FROM ads WHERE id LIKE ?";
+            String searchTermWithWild = "%" + id + "%";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, searchTermWithWild);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
     }
 
     /* ------------------------------------------------------------------------------------------------ */
@@ -139,11 +153,6 @@ public class MySQLAdsDao implements Ads {
 
     public static void main(String[] args) {
 
-//        Config config = new Config();
-//        MySQLAdsDao test = new MySQLAdsDao(config);
-//        Ad testad = new Ad(3, "test", "no description", 78131);
-//        test.insert(testad);
-//        test.delete(3);
 
     }
 

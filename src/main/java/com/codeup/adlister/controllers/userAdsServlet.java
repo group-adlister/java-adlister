@@ -17,25 +17,27 @@ public class userAdsServlet extends HttpServlet {
             return;
         }
 
+        String deleteID = request.getParameter("delete");
+        int edit = Integer.parseInt(request.getParameter("edit"));
+        int update = Integer.parseInt(request.getParameter("update"));
+
+        if (deleteID != null) {
+            DaoFactory.getAdsDao().delete(Integer.parseInt(deleteID));
+        }
+
+        if (update == 1) {
+            System.out.println("add updtated");
+        }
+
         User user = (User) request.getSession().getAttribute("user");
         int id = (int) user.getId();
         request.setAttribute("ads", DaoFactory.getAdsDao().adds_by_user_id(id));
         request.getRequestDispatcher("/WEB-INF/ads/userAds.jsp").forward(request, response);
 
-        request.getRequestDispatcher("/WEB-INF/ads/userAds.jsp")
-                .forward(request, response);
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String deleteID = request.getParameter("delete");
-        String editID = request.getParameter("edit");
 
-        if (deleteID != null) {
-            System.out.println(deleteID);
-            DaoFactory.getAdsDao().delete(Integer.parseInt(deleteID));
-            response.sendRedirect("/userAds");
-        }
 
     }
 

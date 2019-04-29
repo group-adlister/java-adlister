@@ -36,13 +36,11 @@
                         <p class="card-text">${ad.zipcode}</p>
                         <div class="row">
                             <div class="col-sm">
-                                <button type="button" class="btn btn-primary">Edit</button>
+                                    <a href="/editAd$?edit=${ad.id}&update=0" class="btn btn-primary">Edit</a>
                             </div>
                             <!––delete button---------------------------------------------------------------------------------––>
                             <div class="col-sm">
-                                 <form action="/userAds" method="post">
-                                     <input class="btn btn-danger" type="submit" name="delete" value="${ad.id}">
-                                 </form>
+                                     <a href="/userAds?delete=${ad.id}" class="btn btn-danger">Delete</a>
                             </div>
                             <!––---------------------------------------------------------------------------------––>
                         </div>

@@ -23,6 +23,10 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
+    public List<Ad> adds_by_add_id(int id) {
+        return ads;
+    }
+
     public Long insert(Ad ad) {
         ad.setId((long) ads.size());
         ads.add(ad);
