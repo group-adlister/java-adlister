@@ -21,20 +21,15 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
-    <h1>${sessionScope.ad.title}</h1>
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <h2>${ad.title}</h2>
+            <h1>${ad.title}</h1>
+            <h2>${ad.zipcode}</h2>
             <p>${ad.description}</p>
+
         </div>
     </c:forEach>
-    <%--<c:forEach var="user" items="${users}">--%>
-    <%--<div class="col-md-6">--%>
-    <%--<h2>${users.username}</h2>--%>
-    <%--<p>${users.email}</p>--%>
-    <%--</div>--%>
-    <%--</c:forEach>--%>
 </div>
 
 

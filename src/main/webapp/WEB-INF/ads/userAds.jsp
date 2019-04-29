@@ -15,6 +15,10 @@
         .card {
             margin-bottom: 20px;
         }
+        .submitDeleteButton {
+            display: none;
+        }
+
 
     </style>
 </head>
@@ -30,11 +34,18 @@
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <h2><a href="/this_ad?id=${ad.id}&seller=${ad.userId}">${ad.title}</a></h2>
+            <h2>${ad.title}</h2>
+            <p>${ad.zipcode}</p>
+            <p>${ad.description}</p>
+            <p class="confirmDelete text-danger"><b></b></p>
             <!––delete button---------------------------------------------------------------------------------––>
             <div class="col-sm">
+                <button class="firstDeleteButton">Delete</button>
+            </div>
+
+            <div class="col-sm">
                 <form action="/userAds" method="post">
-                    <button type="submit" name="delete" value="${ad.id}">Delete</button>
+                    <button class="submitDeleteButton btn-danger" type="submit" name="delete" value="${ad.id}">Yes, delete forever.</button>
                 </form>
             </div>
             <!––---------------------------------------------------------------------------------––>
@@ -44,6 +55,16 @@
 
 
 
+<script>
+    let submitDeleteButton = document.querySelector(".submitDeleteButton");
+    let firstDeleteButton = document.querySelector(".firstDeleteButton");
+    let confirmDeleteteText = document.querySelector(".confirmDelete");
+    firstDeleteButton.addEventListener("click", function(){
+        firstDeleteButton.style.display = "none";
+        submitDeleteButton.style.display = "block";
+        confirmDeleteteText.innerHTML = "Are you sure you want to delete this ad?"
 
+    });
+</script>
 </body>
 </html>

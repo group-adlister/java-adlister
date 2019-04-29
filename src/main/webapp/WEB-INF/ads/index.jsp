@@ -45,7 +45,7 @@
                             <h5 class="card-title">${ad.title}</h5>
                             <p class="card-text">${ad.description}</p>
                             <p class="card-text">${ad.zipcode}</p>
-                            <button type="button" class="btn btn-primary">View</button>
+                            <button type="submit" name="view" value="${ad.id}"><a href="/this_ad?id=${ad.id}&seller=${ad.userId}">View</a></button>
                         </div>
                     </div>
                 </div>
