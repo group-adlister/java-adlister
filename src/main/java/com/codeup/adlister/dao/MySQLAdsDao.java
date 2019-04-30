@@ -1,7 +1,6 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
-import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -9,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLAdsDao implements Ads {
-    private Connection connection = null;
+    private Connection connection;
 
     public MySQLAdsDao(Config config) {
         try {
@@ -24,9 +23,9 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public MySQLAdsDao() {
-
-    }
+//    public MySQLAdsDao() {
+//
+//    }
 
     @Override
     public List<Ad> all() {
@@ -41,7 +40,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-        public List<Ad> search_add(String search) {
+        public List<Ad> search_ad(String search) {
         try {
             String insertQuery = "SELECT * FROM ads WHERE title LIKE ?";
             String searchTermWithWild = "%" + search + "%";
@@ -54,7 +53,7 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public List<Ad> adds_by_user_id(int id) {
+    public List<Ad> ads_by_user_id(int id) {
         try {
             String insertQuery = "SELECT * FROM ads WHERE user_id LIKE ?";
             String searchTermWithWild = "%" + id + "%";
@@ -127,24 +126,24 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
-    long id = 0;
+//    long id = 0;
 
-    private List<Ad> createAdsFromIdResults(ResultSet rs) throws SQLException {
-        List<Ad> ads = new ArrayList<>();
-        while (rs.getLong("id") == id) {
-            ads.add(extractAd(rs));
-        }
-        return ads;
-    }
+//    private List<Ad> createAdsFromIdResults(ResultSet rs) throws SQLException {
+//        List<Ad> ads = new ArrayList<>();
+//        while (rs.getLong("id") == id) {
+//            ads.add(extractAd(rs));
+//        }
+//        return ads;
+//    }
 
-    public static void main(String[] args) {
-
-//        Config config = new Config();
-//        MySQLAdsDao test = new MySQLAdsDao(config);
-//        Ad testad = new Ad(3, "test", "no description", 78131);
-//        test.insert(testad);
-//        test.delete(3);
-
-    }
+//    public static void main(String[] args) {
+//
+////        Config config = new Config();
+////        MySQLAdsDao test = new MySQLAdsDao(config);
+////        Ad testad = new Ad(3, "test", "no description", 78131);
+////        test.insert(testad);
+////        test.delete(3);
+//
+//    }
 
 }

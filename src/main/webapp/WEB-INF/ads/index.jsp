@@ -27,24 +27,27 @@
 <div class="container">
 <form action="/ads" method="get">
     <div class="form-group">
-        <label for="search">search</label>
+        <label for="search">Search</label>
         <input id="search" name="search" class="form-control" type="text">
     </div>
-    <input type="submit" class="btn btn-primary btn-block">
+    <input type="submit" class="btn btn-secondary btn-block" value="Search">
 </form>
-</div>
+<%--</div>--%>
 
-<div class="container">
-    <div class="row">
+<%--<div class="d-flex container justify-content-between">--%>
+    <div class="d-flex row justify-content-center align-items-center">
     <c:forEach var="ad" items="${ads}">
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="#" alt="Card image cap">
-                        <div class="card-body">
+                <div class="d-flex col-sm justify-content-center align-items-center">
+                    <div class="card d-flex align-text-white bg-dark outline" style="width:
+                    18rem;">
+                        <img class="card-img-top"
+                             src="http://lorempixel.com/250/250/animals/${ad.id}/" alt="img
+                        ${ad.id}">
+                        <div class="card-body text-white">
                             <h5 class="card-title">${ad.title}</h5>
-                            <p class="card-text">${ad.description}</p>
+                            <p class="card-text text-white">${ad.description}</p>
                             <p class="card-text">${ad.zipcode}</p>
-                            <button type="button" class="btn btn-primary">View</button>
+                            <button type="button" class="btn btn-info sharp w-100">View</button>
                         </div>
                     </div>
                 </div>

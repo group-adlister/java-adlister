@@ -2,47 +2,35 @@
 
         <!-- Brand and toggle get grouped for better mobile display -->
 
-        <%--<c:out var="${user}"/>--%>
-
-            <c:if test="${user == null}">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Adlister</a>
+                <nav class="navbar navbar-expand-lg navbar-light bg-info">
+                    <p class="navbar-brand text-white bg-info mb-0">Animal Adlister</p>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/register">sign up <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/login">log in <span class="sr-only">(current)</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </c:if>
-
-            <c:if test="${user != null}">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="collapse navbar-collapse text-white bg-info" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         ${sessionScope.user.username}
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="/ads">Search</a>
-                                    <a class="dropdown-item" href="/ads/create">Post</a>
-                                    <a class="dropdown-item" href="/userAds">Manage Ads</a>
-                                    <a class="dropdown-item" href="/logout">Logout</a>
+                                <div class="dropdown-menu text-white bg-info" aria-labelledby="navbarDropdownMenuLink">
+
+                                    <c:if test="${user == null}">
+                                            <a class="dropdown-item text-white" href="/register">Register <span
+                                                    class="sr-only">(current)</span></a>
+                                            <a class="dropdown-item text-white" href="/login">Sign In <span class="sr-only">
+                                                (current)</span></a>
+                                    </c:if>
+                                                        <a class="dropdown-item text-white" href="/ads">View Ads</a>
+                                    <c:if test="${user != null}">
+                                                        <a class="dropdown-item text-white" href="/ads/create">Create Ad</a>
+                                                        <a class="dropdown-item text-white" href="/userAds">My Account</a>
+                                        <a class="dropdown-item text-white" href="/logout">Logout</a>
+                                    </c:if>
+
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </nav>
-            </c:if>

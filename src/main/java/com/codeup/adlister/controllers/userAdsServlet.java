@@ -19,7 +19,7 @@ public class userAdsServlet extends HttpServlet {
 
         User user = (User) request.getSession().getAttribute("user");
         int id = (int) user.getId();
-        request.setAttribute("ads", DaoFactory.getAdsDao().adds_by_user_id(id));
+        request.setAttribute("ads", DaoFactory.getAdsDao().ads_by_user_id(id));
         request.getRequestDispatcher("/WEB-INF/ads/userAds.jsp").forward(request, response);
 
         request.getRequestDispatcher("/WEB-INF/ads/userAds.jsp")
