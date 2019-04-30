@@ -22,10 +22,10 @@
                 <textarea id="description" name="description" class="form-control" type="text"></textarea>
             </div>
             <div class="form-group">
-                <label for="zipcode">zipcode</label>
+                <label for="zipcode">Zipcode</label>
                 <input id="zipcode" name="zipcode" class="form-control" type="text">
             </div>
-            <input type="submit" class="btn btn-block btn-primary">
+            <input type="submit" class="btn btn-block btn-info">
         </form>
     </div>
 </body>

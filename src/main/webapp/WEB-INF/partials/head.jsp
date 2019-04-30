@@ -11,6 +11,7 @@
 
     body {
         background-color: #222;
+        color: white;
     }
 
     .outline {

@@ -18,21 +18,24 @@ public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-        if (request.getSession().getAttribute("user") == null) {
-            response.sendRedirect("/login");
-            return;
-        }
+//        if (request.getSession().getAttribute("user") == null) {
+//            response.sendRedirect("/login");
+//            return;
+//        }
 
 
 //        List<Ad> ads = new ArrayList<>();
 
 //        if (ads == DaoFactory.getAdsDao().search_add(request.getParameter("search"))){
+//        String search = "";
+//        if (search == "") {
             request.setAttribute("ads", DaoFactory.getAdsDao().all());
+//        }
 //        }
 
 
-        String search = request.getParameter("search");
-        request.setAttribute("ads", DaoFactory.getAdsDao().search_ad(search));
+//        search = request.getParameter("search");
+//        request.setAttribute("ads", DaoFactory.getAdsDao().search_ad(search));
 
 
 

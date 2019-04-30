@@ -29,14 +29,15 @@
         <c:forEach var="ad" items="${ads}">
             <div class="d-flex col-sm justify-content-center align-items-center">
                 <div class="card d-flex align-text-white bg-dark outline" style="width: 18rem;">
-                    <img class="card-img-top" src="http://lorempixel.com/250/250/animals/${ad.id}/" alt="Card image cap">
+                    <img class="card-img-top d-none d-sm-block" src="http://lorempixel.com/250/250/animals/${ad.id}/"
+                         alt="Card image cap">
                     <div class="card-body text-white">
                         <h5 class="card-title">${ad.title}</h5>
                         <p class="card-text">${ad.description}</p>
                         <p class="card-text">${ad.zipcode}</p>
                         <div class="row d-flex">
                             <div class="col-sm">
-                                <button type="button" class="btn btn-primary w-30">Edit</button>
+                                <button type="button" class="btn btn-info w-30">Edit</button>
                             </div>
                             <%--<!––delete button---------------------------------------------------------------------------------––>--%>
                             <div class="col-sm">

@@ -40,7 +40,7 @@
                 <div class="d-flex col-sm justify-content-center align-items-center">
                     <div class="card d-flex align-text-white bg-dark outline" style="width:
                     18rem;">
-                        <img class="card-img-top"
+                        <img class="card-img-top d-none d-sm-block"
                              src="http://lorempixel.com/250/250/animals/${ad.id}/" alt="img
                         ${ad.id}">
                         <div class="card-body text-white">
