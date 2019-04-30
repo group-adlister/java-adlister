@@ -8,11 +8,15 @@ public interface Ads {
     // get a list of all the ads
     List<Ad> all();
 
-    List<Ad> search_add(String search);
+    List<Ad> search_ad(String search);
+
+
+    List<Ad> ads_by_user_id(int id);
 
     List<Ad> adds_by_user_id(int id);
 
     List<Ad> adds_by_add_id(int id);
+
     
     Long insert(Ad ad);
 
