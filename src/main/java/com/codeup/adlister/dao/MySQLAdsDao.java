@@ -86,10 +86,6 @@ public class MySQLAdsDao implements Ads {
     }
 
 
-    /* -Delete------------------------------------------------------------------------------------------ */
-    /* ------------------------------------------------------------------------------------------- */
-    /* ------------------------------------------------------------------------------------------- */
-    /* ------------------------------------------------------------------------------------------- */
     public Long delete(int delete_id) {
         try {
             String insertQuery = "DELETE FROM ads WHERE id LIKE ?";
@@ -102,6 +98,68 @@ public class MySQLAdsDao implements Ads {
         }
         return null;
     }
+
+
+    public List<Ad> adds_by_add_id(int id) {
+        try {
+            String insertQuery = "SELECT * FROM ads WHERE id LIKE ?";
+            String searchTermWithWild = "%" + id + "%";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, searchTermWithWild);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    /* -edit add------------------------------------------------------------------------------------------ */
+    /* ------------------------------------------------------------------------------------------- */
+    /* ------------------------------------------------------------------------------------------- */
+    /* ------------------------------------------------------------------------------------------- */
+
+    public void update_title(int id, String title) {
+        try {
+            String insertQuery = "UPDATE ads SET title = ? WHERE id = ?";
+            String searchTitle = title;
+            int searchId = id;
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, searchTitle);
+            stmt.setInt(2, searchId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    public void update_description(int id, String description) {
+        try {
+            String insertQuery = "UPDATE ads SET description = ? WHERE id = ?";
+            String searchDescription = description;
+            int searchId = id;
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, searchDescription);
+            stmt.setInt(2, searchId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    public void update_zipcode(int id, int zipcode) {
+        try {
+            String insertQuery = "UPDATE ads SET zipcode = ? WHERE id = ?";
+            int searchZipcode = zipcode;
+            int searchId = id;
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setInt(1, zipcode);
+            stmt.setInt(2, searchId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
 
     /* ------------------------------------------------------------------------------------------------ */
     /* ------------------------------------------------------------------------------------------- */
@@ -126,6 +184,7 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
+
 //    long id = 0;
 
 //    private List<Ad> createAdsFromIdResults(ResultSet rs) throws SQLException {
@@ -145,5 +204,24 @@ public class MySQLAdsDao implements Ads {
 ////        test.delete(3);
 //
 //    }
+
+    long id = 0;
+
+    private List<Ad> createAdsFromIdResults(ResultSet rs) throws SQLException {
+        List<Ad> ads = new ArrayList<>();
+        while (rs.getLong("id") == id) {
+            ads.add(extractAd(rs));
+        }
+        return ads;
+    }
+
+    public static void main(String[] args) {
+        Config connection = new Config();
+        MySQLAdsDao test = new MySQLAdsDao(connection);
+
+        test.update_title(7, "kife");
+
+    }
+
 
 }

@@ -14,6 +14,7 @@
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         ${sessionScope.user.username}
                                 </a>
+
                                 <div class="dropdown-menu text-white bg-info" aria-labelledby="navbarDropdownMenuLink">
 
                                     <c:if test="${user == null}">
@@ -28,6 +29,13 @@
                                                         <a class="dropdown-item text-white" href="/userAds">My Account</a>
                                         <a class="dropdown-item text-white" href="/logout">Logout</a>
                                     </c:if>
+
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="/ads">Search</a>
+                                    <a class="dropdown-item" href="/ads/create">Post</a>
+                                    <a class="dropdown-item" href="/userAds?edit=0&update=0">Manage Ads</a>
+                                    <a class="dropdown-item" href="/logout">Logout</a>
 
                                 </div>
                             </li>

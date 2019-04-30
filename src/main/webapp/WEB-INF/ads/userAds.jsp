@@ -37,14 +37,22 @@
                         <p class="card-text">${ad.zipcode}</p>
                         <div class="row d-flex">
                             <div class="col-sm">
+
                                 <button type="button" class="btn btn-info w-30">Edit</button>
+
+                                    <a href="/editAd$?edit=${ad.id}" class="btn btn-primary">Edit</a>
+
                             </div>
                             <%--<!––delete button---------------------------------------------------------------------------------––>--%>
                             <div class="col-sm">
+
                                  <form action="/userAds" method="post">
                                      <button class="btn btn-danger w-30" type="submit" name="delete"
                                              value="Delete">Delete</button>
                                  </form>
+
+                                     <a href="/userAds?delete=${ad.id}" class="btn btn-danger">Delete</a>
+
                             </div>
                             <%--<!––---------------------------------------------------------------------------------––>--%>
                         </div>

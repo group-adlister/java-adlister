@@ -22,17 +22,10 @@ public class userAdsServlet extends HttpServlet {
         request.setAttribute("ads", DaoFactory.getAdsDao().ads_by_user_id(id));
         request.getRequestDispatcher("/WEB-INF/ads/userAds.jsp").forward(request, response);
 
-        request.getRequestDispatcher("/WEB-INF/ads/userAds.jsp")
-                .forward(request, response);
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String deleteID = request.getParameter("delete");
-        System.out.println(deleteID);
-        DaoFactory.getAdsDao().delete(Integer.parseInt(deleteID));
-        response.sendRedirect("/userAds");
 
     }
 
