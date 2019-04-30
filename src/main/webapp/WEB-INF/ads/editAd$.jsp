@@ -44,7 +44,7 @@
 
         <div class="row">
             <div class="col-lg">
-                <input type="submit" class="btn btn-primary btn-block" value="Save">
+                <input type="submit" class="btn btn-info btn-block" value="Save">
             </div>
         </div>
         </form>

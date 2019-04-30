@@ -32,9 +32,7 @@
     </div>
     <input type="submit" class="btn btn-secondary btn-block" value="Search">
 </form>
-<%--</div>--%>
 
-<%--<div class="d-flex container justify-content-between">--%>
     <div class="d-flex row justify-content-center align-items-center">
     <c:forEach var="ad" items="${ads}">
                 <div class="d-flex col-sm justify-content-center align-items-center">
@@ -45,8 +43,10 @@
                         ${ad.id}">
                         <div class="card-body text-white">
                             <h5 class="card-title">${ad.title}</h5>
-                            <p class="card-text text-white">${ad.description}</p>
+                            <p class="card-text text-white text-truncate">${ad.description}</p>
                             <p class="card-text">${ad.zipcode}</p>
+                            <p class="card-text">Created by: ${ad.userId}</p>
+
                             <button type="button" class="btn btn-info sharp w-100">View</button>
                         </div>
                     </div>

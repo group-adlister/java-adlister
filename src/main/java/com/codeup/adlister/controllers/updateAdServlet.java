@@ -53,7 +53,6 @@ public class updateAdServlet extends HttpServlet {
             System.out.println(zipcode);
         }
 
-
         response.sendRedirect("/userAds");
 
     }

@@ -33,14 +33,12 @@
                          alt="Card image cap">
                     <div class="card-body text-white">
                         <h5 class="card-title">${ad.title}</h5>
-                        <p class="card-text">${ad.description}</p>
+                        <p class="card-text text-truncate">${ad.description}</p>
                         <p class="card-text">${ad.zipcode}</p>
                         <div class="row d-flex">
                             <div class="col-sm">
 
-                                <button type="button" class="btn btn-info w-30">Edit</button>
-
-                                    <a href="/editAd$?edit=${ad.id}" class="btn btn-primary">Edit</a>
+                                    <a href="/editAd$?edit=${ad.id}" class="btn btn-info">Edit</a>
 
                             </div>
                             <%--<!––delete button---------------------------------------------------------------------------------––>--%>
@@ -50,8 +48,6 @@
                                      <button class="btn btn-danger w-30" type="submit" name="delete"
                                              value="Delete">Delete</button>
                                  </form>
-
-                                     <a href="/userAds?delete=${ad.id}" class="btn btn-danger">Delete</a>
 
                             </div>
                             <%--<!––---------------------------------------------------------------------------------––>--%>
