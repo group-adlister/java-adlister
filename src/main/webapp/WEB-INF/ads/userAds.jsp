@@ -36,7 +36,7 @@
                         <p class="card-text">${ad.zipcode}</p>
                         <div class="row">
                             <div class="col-sm">
-                                    <a href="/editAd$?edit=${ad.id}&update=0" class="btn btn-primary">Edit</a>
+                                    <a href="/editAd$?edit=${ad.id}" class="btn btn-primary">Edit</a>
                             </div>
                             <!––delete button---------------------------------------------------------------------------------––>
                             <div class="col-sm">

@@ -18,6 +18,10 @@ public interface Ads {
 
     Long delete(int delete_id);
 
+    void update_title(int id, String title);
 
+    void update_description(int id, String description);
+
+    void update_zipcode(int id, int zipcode);
 }
 

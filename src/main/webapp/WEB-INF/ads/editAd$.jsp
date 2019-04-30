@@ -17,10 +17,11 @@
 <div class="container">
     <c:forEach var="ad" items="${ads}">
 
+        <form action="/editAd$?edit=${ad.id}" method="POST">
         <div class="row">
             <div class="col-lg">
                 <p>Title</p>
-                <input type="text" class="form-control" id="1" placeholder="${ad.title}">
+                <input id="title" name="title" class="form-control" type="text" placeholder="${ad.title}">
             </div>
         </div>
         <br>
@@ -28,7 +29,7 @@
         <div class="row">
             <div class="col-lg">
                 <p>Description</p>
-                <input type="text" class="form-control" id="2" placeholder="${ad.description}">
+                <input id="description" name="description" class="form-control" type="text" placeholder="${ad.description}">
             </div>
         </div>
         <br>
@@ -36,19 +37,21 @@
         <div class="row">
             <div class="col-lg">
                 <p>Zipcode</p>
-                <input type="text" class="form-control" id="3" placeholder="${ad.zipcode}">
+                <input id="zipcode" name="zipcode" class="form-control" type="text" placeholder="${ad.zipcode}">
             </div>
         </div>
         <br>
 
         <div class="row">
             <div class="col-lg">
-                <a href="/userAds?edit=${ad.id}&update=1" class="btn btn-success">Save</a>
+                <input type="submit" class="btn btn-primary btn-block" value="Save">
             </div>
         </div>
+        </form>
 
     </c:forEach>
 </div>
+
 
 </body>
 </html>

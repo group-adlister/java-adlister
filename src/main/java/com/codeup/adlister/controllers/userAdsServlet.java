@@ -17,18 +17,6 @@ public class userAdsServlet extends HttpServlet {
             return;
         }
 
-        String deleteID = request.getParameter("delete");
-        int edit = Integer.parseInt(request.getParameter("edit"));
-        int update = Integer.parseInt(request.getParameter("update"));
-
-        if (deleteID != null) {
-            DaoFactory.getAdsDao().delete(Integer.parseInt(deleteID));
-        }
-
-        if (update == 1) {
-            System.out.println("add updtated");
-        }
-
         User user = (User) request.getSession().getAttribute("user");
         int id = (int) user.getId();
         request.setAttribute("ads", DaoFactory.getAdsDao().adds_by_user_id(id));

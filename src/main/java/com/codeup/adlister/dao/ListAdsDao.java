@@ -38,6 +38,20 @@ public class ListAdsDao implements Ads {
         return null;
     }
 
+    @Override
+    public void update_title(int id, String title) {
+
+    }
+
+    @Override
+    public void update_description(int id, String description) {
+
+    }
+
+    @Override
+    public void update_zipcode(int id, int zipcode) {
+
+    }
 
     private String generateAds() {
         return "There is nothing for sale in your area";

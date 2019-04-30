@@ -27,6 +27,34 @@ public class updateAdServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+        int id = Integer.parseInt(request.getParameter("edit"));
+        System.out.println(id);
+
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
+
+        if ( request.getParameter("title") != null) {
+            String title = request.getParameter("title");
+            DaoFactory.getAdsDao().update_title(id, title);
+            System.out.println(title);
+        }
+
+        if ( request.getParameter("description") != null) {
+            String description = request.getParameter("description");
+            DaoFactory.getAdsDao().update_description(id, description);
+            System.out.println(description);
+        }
+
+        if ( request.getParameter("zipcode") != null) {
+            int zipcode = Integer.parseInt(request.getParameter("zipcode"));
+            DaoFactory.getAdsDao().update_zipcode(id, zipcode);
+            System.out.println(zipcode);
+        }
+
+
+        response.sendRedirect("/userAds");
 
     }
 
