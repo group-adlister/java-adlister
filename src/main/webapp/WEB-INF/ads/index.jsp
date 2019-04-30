@@ -5,20 +5,52 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Viewing All The Ads" />
     </jsp:include>
+
+    <style>
+        .card-img-top {
+            width: 100%;
+            height: 15vw;
+            object-fit: cover;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
+<br>
+<br>
 <div class="container">
-    <h1>Here Are all the ads!</h1>
-
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-        </div>
-    </c:forEach>
+<form action="/ads" method="get">
+    <div class="form-group">
+        <label for="search">search</label>
+        <input id="search" name="search" class="form-control" type="text">
+    </div>
+    <input type="submit" class="btn btn-primary btn-block">
+</form>
 </div>
 
+<div class="container">
+    <div class="row">
+    <c:forEach var="ad" items="${ads}">
+                <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="#" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">${ad.title}</h5>
+                            <p class="card-text">${ad.description}</p>
+                            <p class="card-text">${ad.zipcode}</p>
+                            <button type="button" class="btn btn-primary">View</button>
+                        </div>
+                    </div>
+                </div>
+    </c:forEach>
+    </div>
+</div>
 </body>
 </html>
+

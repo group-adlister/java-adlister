@@ -11,8 +11,26 @@ import java.io.IOException;
 
 @WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/ads")
 public class AdsIndexServlet extends HttpServlet {
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
+
+        String search = request.getParameter("search");
+        request.setAttribute("ads", DaoFactory.getAdsDao().search_add(search));
         request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
+
+
     }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+
+
+
+    }
+
 }
