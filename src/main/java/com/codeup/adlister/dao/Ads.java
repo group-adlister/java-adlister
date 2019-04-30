@@ -13,7 +13,7 @@ public interface Ads {
 
     List<Ad> ads_by_user_id(int id);
 
-    List<Ad> adds_by_user_id(int id);
+//    List<Ad> adds_by_user_id(int id);
 
     List<Ad> adds_by_add_id(int id);
 

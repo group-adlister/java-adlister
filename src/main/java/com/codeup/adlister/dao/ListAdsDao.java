@@ -59,11 +59,11 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
-    public List<Ad> search_add(String search) {
+    public List<Ad> search_ad(String search) {
         return ads;
     }
 
-    public List<Ad> adds_by_user_id(int id) {
+    public List<Ad> ads_by_user_id(int id) {
         return ads;
     }
 
