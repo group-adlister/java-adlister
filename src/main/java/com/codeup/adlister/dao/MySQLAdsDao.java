@@ -86,10 +86,6 @@ public class MySQLAdsDao implements Ads {
     }
 
 
-    /* -Delete------------------------------------------------------------------------------------------ */
-    /* ------------------------------------------------------------------------------------------- */
-    /* ------------------------------------------------------------------------------------------- */
-    /* ------------------------------------------------------------------------------------------- */
     public Long delete(int delete_id) {
         try {
             String insertQuery = "DELETE FROM ads WHERE id = ?";
@@ -102,7 +98,73 @@ public class MySQLAdsDao implements Ads {
         return null;
     }
 
+<<<<<<< HEAD
     /* --EDIT---------------------------------------------------------------------------------------------- */
+=======
+
+    public List<Ad> adds_by_add_id(int id) {
+        try {
+            String insertQuery = "SELECT * FROM ads WHERE id LIKE ?";
+            String searchTermWithWild = "%" + id + "%";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, searchTermWithWild);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    /* -edit add------------------------------------------------------------------------------------------ */
+    /* ------------------------------------------------------------------------------------------- */
+    /* ------------------------------------------------------------------------------------------- */
+    /* ------------------------------------------------------------------------------------------- */
+
+    public void update_title(int id, String title) {
+        try {
+            String insertQuery = "UPDATE ads SET title = ? WHERE id = ?";
+            String searchTitle = title;
+            int searchId = id;
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, searchTitle);
+            stmt.setInt(2, searchId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    public void update_description(int id, String description) {
+        try {
+            String insertQuery = "UPDATE ads SET description = ? WHERE id = ?";
+            String searchDescription = description;
+            int searchId = id;
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, searchDescription);
+            stmt.setInt(2, searchId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    public void update_zipcode(int id, int zipcode) {
+        try {
+            String insertQuery = "UPDATE ads SET zipcode = ? WHERE id = ?";
+            int searchZipcode = zipcode;
+            int searchId = id;
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setInt(1, zipcode);
+            stmt.setInt(2, searchId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+
+    /* ------------------------------------------------------------------------------------------------ */
+>>>>>>> a006cf1acd4288b2a92f3b1df52849dabd510e64
     /* ------------------------------------------------------------------------------------------- */
     /* ------------------------------------------------------------------------------------------- */
     /* ------------------------------------------------------------------------------------------- */
@@ -148,6 +210,7 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
+<<<<<<< HEAD
     //    CLICK ON A SPECIFIC AD
     @Override
     public List<Ad> clickOnAd(long thisID) {
@@ -160,6 +223,14 @@ public class MySQLAdsDao implements Ads {
         catch (SQLException e) {
             throw new RuntimeException("Error finding this ad", e);
         }
+=======
+    public static void main(String[] args) {
+        Config connection = new Config();
+        MySQLAdsDao test = new MySQLAdsDao(connection);
+
+        test.update_title(7, "kife");
+
+>>>>>>> a006cf1acd4288b2a92f3b1df52849dabd510e64
     }
 
 }

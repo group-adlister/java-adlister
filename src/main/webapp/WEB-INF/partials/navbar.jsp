@@ -38,7 +38,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="/ads">Search</a>
                                     <a class="dropdown-item" href="/ads/create">Post</a>
-                                    <a class="dropdown-item" href="/userAds">Manage Ads</a>
+                                    <a class="dropdown-item" href="/userAds?edit=0&update=0">Manage Ads</a>
                                     <a class="dropdown-item" href="/logout">Logout</a>
                                 </div>
                             </li>
