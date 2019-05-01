@@ -18,16 +18,15 @@ public interface Ads {
 
     Long delete(int delete_id);
 
-<<<<<<< HEAD
+
     List<Ad> clickOnAd(long thisID);
 
 
-=======
+
     void update_title(int id, String title);
 
     void update_description(int id, String description);
 
     void update_zipcode(int id, int zipcode);
->>>>>>> a006cf1acd4288b2a92f3b1df52849dabd510e64
 }
 

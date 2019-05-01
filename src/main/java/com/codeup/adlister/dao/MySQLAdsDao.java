@@ -98,9 +98,9 @@ public class MySQLAdsDao implements Ads {
         return null;
     }
 
-<<<<<<< HEAD
+
     /* --EDIT---------------------------------------------------------------------------------------------- */
-=======
+
 
     public List<Ad> adds_by_add_id(int id) {
         try {
@@ -164,7 +164,7 @@ public class MySQLAdsDao implements Ads {
 
 
     /* ------------------------------------------------------------------------------------------------ */
->>>>>>> a006cf1acd4288b2a92f3b1df52849dabd510e64
+
     /* ------------------------------------------------------------------------------------------- */
     /* ------------------------------------------------------------------------------------------- */
     /* ------------------------------------------------------------------------------------------- */
@@ -210,7 +210,7 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
-<<<<<<< HEAD
+
     //    CLICK ON A SPECIFIC AD
     @Override
     public List<Ad> clickOnAd(long thisID) {
@@ -219,18 +219,9 @@ public class MySQLAdsDao implements Ads {
             stmt.setLong(1, thisID);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException("Error finding this ad", e);
         }
-=======
-    public static void main(String[] args) {
-        Config connection = new Config();
-        MySQLAdsDao test = new MySQLAdsDao(connection);
-
-        test.update_title(7, "kife");
-
->>>>>>> a006cf1acd4288b2a92f3b1df52849dabd510e64
     }
 
 }

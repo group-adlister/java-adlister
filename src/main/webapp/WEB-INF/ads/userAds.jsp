@@ -49,7 +49,7 @@
             </div>
 
             <div class="col-sm">
-<<<<<<< HEAD
+
                 <form action="/userAds" method="post">
                     <button class="submitDeleteButton btn-danger" type="submit" name="delete" value="${ad.id}">Yes, delete forever.</button>
                 </form>
@@ -58,32 +58,14 @@
             <form action="/userAds">
                 <div class="col-sm">
                     <button class="cancelDeleteButton btn-secondary">No, nevermind.</button>
-=======
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="#" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">${ad.title}</h5>
-                        <p class="card-text">${ad.description}</p>
-                        <p class="card-text">${ad.zipcode}</p>
-                        <div class="row">
-                            <div class="col-sm">
-                                    <a href="/editAd$?edit=${ad.id}" class="btn btn-primary">Edit</a>
-                            </div>
-                            <!––delete button---------------------------------------------------------------------------------––>
-                            <div class="col-sm">
-                                     <a href="/userAds?delete=${ad.id}" class="btn btn-danger">Delete</a>
-                            </div>
-                            <!––---------------------------------------------------------------------------------––>
-                        </div>
-                    </div>
->>>>>>> a006cf1acd4288b2a92f3b1df52849dabd510e64
                 </div>
             </form>
             <!––---------------------------------------------------------------------------------––>
 
             <!––edit button---------------------------------------------------------------------------------––>
             <div class="col-sm">
-                <button class="editButton btn-warning" type="submit" name="edit"><a href="/ads/edit_ad?edit=${ad.id}&update=0">Edit</a></button>
+                <button class="editButton btn-warning" type="submit" name="edit"><a href=" /editAd$?edit=${ad.id}">Edit</a></button>
+
             </div>
             <!––---------------------------------------------------------------------------------––>
         </div>
